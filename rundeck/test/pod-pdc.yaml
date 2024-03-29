@@ -1,0 +1,25 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: d6bec7d2-f142-41b6-941f-a33ecf4d2a34
+  loglevel: INFO
+  name: pod-pdc
+  nodeFilterEditable: false
+  plugins:
+    ExecutionLifecycle: {}
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - configuration:
+        config_file: /home/rundeck/.kube/prod-pdc/config
+        debug: 'false'
+        interpreter: python
+        name: cattle-cluster-agent-654f6db496-d7h9r
+        namespace: cattle-system
+        verify_ssl: 'false'
+      nodeStep: true
+      type: Kubernetes-Describe-Pod
+    keepgoing: false
+    strategy: node-first
+  uuid: d6bec7d2-f142-41b6-941f-a33ecf4d2a34
+

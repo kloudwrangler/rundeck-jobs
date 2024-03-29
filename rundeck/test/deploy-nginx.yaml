@@ -1,0 +1,36 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: 44e8718a-f218-411e-a640-c5ee70ba08b6
+  loglevel: INFO
+  name: deploy-nginx
+  nodeFilterEditable: false
+  plugins:
+    ExecutionLifecycle: {}
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - configuration:
+        config_file: /home/rundeck/.kube/config
+        debug: 'false'
+        interpreter: python
+        namespace: test
+        type: Pod
+        verify_ssl: 'false'
+        yaml: |-
+          apiVersion: v1
+          kind: Pod
+          metadata:
+            name: nginx
+          spec:
+            containers:
+            - name: nginx
+              image: nginx:1.14.2
+              ports:
+              - containerPort: 80
+      nodeStep: true
+      type: Kubernetes-Create
+    keepgoing: false
+    strategy: node-first
+  uuid: 44e8718a-f218-411e-a640-c5ee70ba08b6
+

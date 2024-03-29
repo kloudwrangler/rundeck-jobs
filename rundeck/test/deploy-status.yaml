@@ -1,0 +1,25 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: 7759304c-6b93-47f2-9b51-3acaf4f0c019
+  loglevel: INFO
+  name: deploy-status
+  nodeFilterEditable: false
+  plugins:
+    ExecutionLifecycle: {}
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - configuration:
+        config_file: /home/rundeck/.kube/config
+        debug: 'false'
+        interpreter: python
+        name: 'grafana '
+        namespace: test
+        verify_ssl: 'false'
+      nodeStep: true
+      type: Kubernetes-Status-Deployment
+    keepgoing: false
+    strategy: node-first
+  uuid: 7759304c-6b93-47f2-9b51-3acaf4f0c019
+
