@@ -1,0 +1,21 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: 4943a019-f382-49da-9046-8872a33bf441
+  loglevel: INFO
+  name: helm-script
+  nodeFilterEditable: false
+  plugins:
+    ExecutionLifecycle: {}
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - script: |-
+        export KUBECONFIG=/home/rundeck/.kube/dev-pdc/config
+        helm repo add grafana https://grafana.github.io/helm-charts
+        helm repo update
+        helm install grafana grafana/grafana -n test
+    keepgoing: false
+    strategy: node-first
+  uuid: 4943a019-f382-49da-9046-8872a33bf441
+
