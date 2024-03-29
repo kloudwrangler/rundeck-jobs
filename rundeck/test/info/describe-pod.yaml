@@ -1,6 +1,7 @@
 - defaultTab: nodes
   description: ''
   executionEnabled: true
+  group: info
   id: 560d1848-1770-4536-89af-92f5c3b7cf8b
   loglevel: INFO
   name: describe-pod
