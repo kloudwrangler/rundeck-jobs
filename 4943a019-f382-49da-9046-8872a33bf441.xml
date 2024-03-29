@@ -1,0 +1,23 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>4943a019-f382-49da-9046-8872a33bf441</id>
+    <loglevel>INFO</loglevel>
+    <name>helm-script</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <script><![CDATA[export KUBECONFIG=/home/rundeck/.kube/dev-pdc/config
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install grafana grafana/grafana -n test]]></script>
+        <scriptargs />
+      </command>
+    </sequence>
+    <uuid>4943a019-f382-49da-9046-8872a33bf441</uuid>
+  </job>
+</joblist>

@@ -1,0 +1,29 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>44e8718a-f218-411e-a640-c5ee70ba08b6</id>
+    <loglevel>INFO</loglevel>
+    <name>deploy-nginx</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <node-step-plugin type='Kubernetes-Create'>
+          <configuration>
+            <entry key='config_file' value='/home/rundeck/.kube/config' />
+            <entry key='debug' value='false' />
+            <entry key='interpreter' value='python' />
+            <entry key='namespace' value='test' />
+            <entry key='type' value='Pod' />
+            <entry key='verify_ssl' value='false' />
+            <entry key='yaml' value='apiVersion: v1&#10;kind: Pod&#10;metadata:&#10;  name: nginx&#10;spec:&#10;  containers:&#10;  - name: nginx&#10;    image: nginx:1.14.2&#10;    ports:&#10;    - containerPort: 80' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+    </sequence>
+    <uuid>44e8718a-f218-411e-a640-c5ee70ba08b6</uuid>
+  </job>
+</joblist>

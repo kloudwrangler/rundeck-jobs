@@ -1,0 +1,28 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>7759304c-6b93-47f2-9b51-3acaf4f0c019</id>
+    <loglevel>INFO</loglevel>
+    <name>deploy-status</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <node-step-plugin type='Kubernetes-Status-Deployment'>
+          <configuration>
+            <entry key='config_file' value='/home/rundeck/.kube/config' />
+            <entry key='debug' value='false' />
+            <entry key='interpreter' value='python' />
+            <entry key='name' value='grafana ' />
+            <entry key='namespace' value='test' />
+            <entry key='verify_ssl' value='false' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+    </sequence>
+    <uuid>7759304c-6b93-47f2-9b51-3acaf4f0c019</uuid>
+  </job>
+</joblist>

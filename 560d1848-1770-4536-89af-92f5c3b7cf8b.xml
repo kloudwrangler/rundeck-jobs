@@ -1,0 +1,28 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>560d1848-1770-4536-89af-92f5c3b7cf8b</id>
+    <loglevel>INFO</loglevel>
+    <name>describe-pod</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <node-step-plugin type='Kubernetes-Describe-Pod'>
+          <configuration>
+            <entry key='config_file' value='/home/rundeck/.kube/config' />
+            <entry key='debug' value='false' />
+            <entry key='interpreter' value='python' />
+            <entry key='name' value='consul-server-0' />
+            <entry key='namespace' value='dev1-pdc' />
+            <entry key='verify_ssl' value='false' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+    </sequence>
+    <uuid>560d1848-1770-4536-89af-92f5c3b7cf8b</uuid>
+  </job>
+</joblist>

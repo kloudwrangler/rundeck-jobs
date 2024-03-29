@@ -1,0 +1,28 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>d6bec7d2-f142-41b6-941f-a33ecf4d2a34</id>
+    <loglevel>INFO</loglevel>
+    <name>pod-pdc</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <node-step-plugin type='Kubernetes-Describe-Pod'>
+          <configuration>
+            <entry key='config_file' value='/home/rundeck/.kube/prod-pdc/config' />
+            <entry key='debug' value='false' />
+            <entry key='interpreter' value='python' />
+            <entry key='name' value='cattle-cluster-agent-654f6db496-d7h9r' />
+            <entry key='namespace' value='cattle-system' />
+            <entry key='verify_ssl' value='false' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+    </sequence>
+    <uuid>d6bec7d2-f142-41b6-941f-a33ecf4d2a34</uuid>
+  </job>
+</joblist>
